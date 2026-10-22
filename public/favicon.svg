@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="lensGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F2FE" />
+      <stop offset="50%" stop-color="#8B5CF6" />
+      <stop offset="100%" stop-color="#6366F1" />
+    </linearGradient>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A" />
+      <stop offset="100%" stop-color="#060913" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="url(#bgGrad)" stroke="#1E293B" stroke-width="2"/>
+  <circle cx="32" cy="32" r="20" stroke="url(#lensGrad)" stroke-width="2.5" stroke-dasharray="3 3" opacity="0.6" />
+  <circle cx="32" cy="32" r="14" stroke="url(#lensGrad)" stroke-width="3" filter="url(#glow)"/>
+  <path d="M26 32h12M32 26v12" stroke="#00F2FE" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="32" cy="32" r="4" fill="#00F2FE"/>
+  <path d="M16 22V16h6M42 16h6v6M16 42v6h6M48 42v6h-6" stroke="#8B5CF6" stroke-width="2.5" stroke-linecap="round"/>
+</svg>

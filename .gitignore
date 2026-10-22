@@ -1,0 +1,104 @@
+# ==============================================================================
+# TruthLens AI - Production Safe Git Ignore Policy
+# ==============================================================================
+
+# Node.js & Frontend build outputs
+node_modules/
+.pnp
+.pnp.js
+dist/
+dist-ssr/
+build/
+*.local
+
+# Python runtime, caches & virtual environments
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+ENV/
+env/
+env.bak/
+venv.bak/
+
+# Environment variables, credentials & secrets
+.env
+.env.*
+*.env
+*.pem
+*.key
+*.cert
+*.crt
+*.pfx
+secrets/
+credentials.json
+.token
+
+# IDE & OS files
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Logging, scratch & temporary debug files
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+*.tmp
+*.temp
+scratch/
+.tempmediaStorage/
+
+# Video media exclusions (*.mp4, *.mov, *.avi, *.webm, etc.)
+*.mp4
+*.mov
+*.avi
+*.webm
+*.wmv
+*.flv
+*.mkv
+
+# Generated intermediate image frames & sample crops
+frame_*.jpg
+frame_*.png
+sample_*.jpg
+scratch_*.jpg
+
+# Large video datasets & evaluation sets
+dataset_v2/
+dataset_v3/
+dataset_v4/
+eval_dataset/
+
+# Feature caches & temporary dumps
+*.npy
+*.npz
+*_cache.pt
+features_cache_*.pt
+
+# Model checkpoint files (*.pt, *.pth, *.safetensors, *.onnx, *.bin)
+*.pt
+*.pth
+*.safetensors
+*.onnx
+*.bin
+
+# Whitelist confirmed essential lightweight model checkpoint safe to commit (< 5MB)
+!backend/weights/videomae_general_head_v4.pt
+
+# Evaluation report outputs & metrics dumps
+*_evaluation_report.json
+*_category_breakdown.json
