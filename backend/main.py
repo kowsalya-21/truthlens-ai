@@ -22,10 +22,22 @@ app = FastAPI(
     version="2.1.0"
 )
 
+# Allowed origins for CORS (deployed Vercel frontend, preview domains, local dev)
+ALLOWED_ORIGINS = [
+    "https://truthlens-ai-wheat.vercel.app",
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+]
+if os.environ.get("CORS_ORIGINS"):
+    ALLOWED_ORIGINS.extend([o.strip() for o in os.environ["CORS_ORIGINS"].split(",") if o.strip()])
+
 # Enable CORS for Vite frontend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=ALLOWED_ORIGINS,
+    allow_origin_regex=r"https://.*\.vercel\.app",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
